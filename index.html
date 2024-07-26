@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock by Sanjana parab</title>
+    <style>
+        h1{font-size:50px; font-family: calibri;}
+        h2{font-size:200px; font-family: calibri; margin: 0px;}
+        body{background-image: url(backgroung.webp);}
+        h1{
+            border-style:double;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Digital Clock </h1>
+    <h2 id="msg"></h2>
+    <script>
+        function show()
+        {
+            let msg = document.getElementById("msg");
+            let d = new Date();
+
+            let hr=d.getHours();
+            let shr=hr.toString();
+            if(hr<10)
+            shr="0"+shr;
+
+            let mi=d.getMinutes();
+            let smi=mi.toString();
+            if(mi<10)
+            smi="0"+smi;
+
+            let se=d.getSeconds();
+            let sse=se.toString();
+            if(se<10)
+            sse="0"+sse;
+
+            let ans=shr+":"+smi+":"+sse;
+            msg.innerHTML=ans;
+        }
+        show();
+        setInterval(show,1000);
+    </script>
+    </center>
+    
+</body>
+</html>
